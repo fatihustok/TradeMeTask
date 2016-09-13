@@ -10,15 +10,17 @@ import UIKit
 
 class categoryTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subcategoryPhoto: UIImageView!
+       override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
+        
+        titleLabel?.text = "Unknown title"
+        subcategoryPhoto?.image = UIImage()
+        }
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
+    
 }

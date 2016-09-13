@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct Result {
+    
+    var name: String!
+    var ListingId: Int!
+    var photo: String!
+    
+}

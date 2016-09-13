@@ -8,28 +8,42 @@
 
 import UIKit
 
-class listingViewController: UIViewController {
+class listingViewController: ViewController {
+    @IBOutlet weak var webView: UIWebView!
+        var listingSelected: Result!
+    
+    
+    /* I show the listing details here. Ideally, we can parse the data using trademeAPI. Due to the time constraint, I show the details of a listing on a webview. */
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        /* If the device is connected to the internet */
+        if self.connectedToNetwork() == true {
+        let listingid = listingSelected.ListingId!
+        let requestURL = NSURL(string: "https://www.tmsandbox.co.nz/\(listingid)")
+        let request = NSURLRequest(URL: (requestURL!))
+        self.webView.loadRequest(request)  // load the website on webview 
+        }
+            /* If the device is not connected to the internet */
 
-        // Do any additional setup after loading the view.
+         else{
+            self.showErrorAlert("No Internet Connection", defaultMessage: "Please check your internet connection for the details of the listing", errors: [])
+ 
+        }
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(listingViewController.dismiss))
+        view.addGestureRecognizer(tap)
+
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func pressedClose(sender: UIButton) {
+        dismiss()
     }
-    */
-
 }
+

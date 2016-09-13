@@ -9,16 +9,24 @@
 import UIKit
 
 class searchTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var listingLabel: UILabel!
+    
+    
+    @IBOutlet weak var listingThumb: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
+        
+        titleLabel?.text = "Unknown title"
+        listingLabel?.text = "Unknown listing"
+        }
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
-
+    
+    
 }
