@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  listingViewController.swift
 //  tradeMeTask
 //
 //  Created by Refik Fatih Ustok on 12/09/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class listingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  categoriesViewController.swift
 //  tradeMeTask
 //
-//  Created by Refik Fatih Ustok on 12/09/16.
+//  Created by Refik Fatih Ustok on 11/09/16.
 //  Copyright © 2016 Refik Fatih Ustok. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class categoriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
